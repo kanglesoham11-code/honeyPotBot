@@ -245,11 +245,11 @@ button:hover { box-shadow: 0 0 15px var(--neon-cyan); }
         overflow-y: auto; 
     }
 
-    /* 2. Stack Grid Vertically */
+    /* 2. Stack Grid Vertically: REVERSED so Chat is on TOP */
     .grid-layout {
         grid-template-columns: 1fr;
         display: flex;
-        flex-direction: column;
+        flex-direction: column-reverse; /* <--- THE FIX */
         gap: 15px;
     }
 
