@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🛡️ SENTINEL // GLOBAL TRACKER</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <div class="scanlines"></div>
+    
+    <div class="dashboard-container">
+        <header class="cyber-header">
+            <div class="logo">
+                <i class="fa-solid fa-satellite-dish fa-spin" style="--fa-animation-duration: 3s;"></i>
+                <span>SENTINEL NODE // <span class="status">ACTIVE</span></span>
+            </div>
+            <div class="header-controls">
+                <button id="voice-toggle" class="control-btn"><i class="fa-solid fa-volume-xmark"></i> VOICE: OFF</button>
+                <button id="export-btn" class="control-btn alert"><i class="fa-solid fa-file-export"></i> EXPORT CASE</button>
+                <div class="timer" id="clock">00:00:00</div>
+            </div>
+        </header>
+
+        <main class="grid-layout">
+            
+            <section class="left-column">
+                
+                <div class="panel intel-panel">
+                    <h2 class="panel-title"><i class="fa-solid fa-crosshairs"></i> THREAT METRICS</h2>
+                    <div class="risk-wrapper">
+                        <div class="risk-circle-outer">
+                            <div class="risk-circle-inner"><span id="risk-score">0</span>%</div>
+                            <svg viewBox="0 0 100 100">
+                                <circle cx="50" cy="50" r="45" class="bg-ring"></circle>
+                                <circle cx="50" cy="50" r="45" class="progress-ring" id="risk-ring"></circle>
+                            </svg>
+                        </div>
+                    </div>
+                    <ul id="extracted-info">
+                        <li class="placeholder-text">Awaiting Signal...</li>
+                    </ul>
+                </div>
+
+                <div class="panel map-panel">
+                    <h2 class="panel-title"><i class="fa-solid fa-globe"></i> LIVE GEO-TRACE</h2>
+                    <div id="map"></div>
+                    <div class="map-overlay" id="map-overlay">
+                        SCANNING GLOBAL NODES...
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="panel chat-panel">
+                <div class="chat-header">
+                    <h2><i class="fa-solid fa-terminal"></i> INTERCEPTION FEED</h2>
+                    <div class="connection-status"><span class="blink">●</span> SECURE</div>
+                </div>
+
+                <div id="chat-box" class="chat-box">
+                    <div class="system-msg">> SYSTEM INITIALIZED...</div>
+                </div>
+
+                <form id="scammer-form" class="input-area">
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-user-secret prompt-icon"></i>
+                        <input id="message-input" type="text" placeholder="Incoming Scammer Message..." autocomplete="off">
+                    </div>
+                    <button type="submit">ENGAGE</button>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="/static/script.js"></script>
+</body>
+</html>
